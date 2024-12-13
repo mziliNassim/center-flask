@@ -1,225 +1,229 @@
 {% extends 'layout.html' %} {% block content %}
 
-<div class="mb-10">
-  <!-- home -- Top section -->
-  <div
-    class="grid grid-cols-1 lg:grid-cols-2 gap-10 min-h-[80vh] items-center justify-start"
-  >
-    <div class="flex flex-col gap-10">
-      <h1 class="text-4xl text-wrap font-semibold">
-        Center De Formation De Competence & D'Accompagnement
-      </h1>
-      <p class="text-xl text-wrap">
-        Le Centre de Formation de Compétences et d'Accompagnement est un
-        établissement de formation et d'accompagnement dédié. Il propose une
-        variété de programmes en ligne et en présentiel pour développer les
-        compétences et l'employabilité. Les programmes sont dirigés par des
-        formateurs expérimentés pour garantir une expérience de formation de
-        qualité.
-      </p>
-
-      <button class="w-fit bg-orange-400 py-5 px-10">Get Started</button>
-    </div>
-
-    <div class="w-full hidden lg:flex itens-center justify-center">
-      <img
-        title="img"
-        src="{{ url_for('static', filename='img/svg/Thesis-rafiki.svg') }}"
-      />
-    </div>
-  </div>
-
-  <!-- home -- Categories -->
-  <div class="mb-20">
-    <h3
-      class="text-6xl text-center font-semibold text-blue-400 capitalize mb-10"
-    >
-      <span>Categories</span>
-    </h3>
-
+<div class="mx-auto w-full px-5 md:w-11/12 lg:w-10/12">
+  <div class="mb-10">
+    <!-- home -- Top section -->
     <div
-      class="flex items-center p-4 px-7 text-sm text-gray-800 mb-10 border border-gray-300 rounded-lg bg-gray-50 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600"
-      role="alert"
+      class="grid grid-cols-1 lg:grid-cols-2 gap-10 min-h-[80vh] items-center justify-start"
     >
-      <span class="sr-only">Info</span>
-      <div>
-        <span class="font-medium">
-          Explore our wide range of categories designed to help you master
-          various aspects of web development, from front-end design to back-end
-          programming, database management, and more.
-        </span>
+      <div class="flex flex-col gap-10">
+        <h1 class="text-4xl text-wrap font-semibold">
+          Center De Formation De Competence & D'Accompagnement
+        </h1>
+        <p class="text-xl text-wrap">
+          Le Centre de Formation de Compétences et d'Accompagnement est un
+          établissement de formation et d'accompagnement dédié. Il propose une
+          variété de programmes en ligne et en présentiel pour développer les
+          compétences et l'employabilité. Les programmes sont dirigés par des
+          formateurs expérimentés pour garantir une expérience de formation de
+          qualité.
+        </p>
+
+        <button class="w-fit bg-orange-400 py-5 px-10">Get Started</button>
+      </div>
+
+      <div class="w-full hidden lg:flex itens-center justify-center">
+        <img
+          title="img"
+          src="{{ url_for('static', filename='img/svg/Thesis-rafiki.svg') }}"
+        />
       </div>
     </div>
 
-    <div
-      class="grid grid-cols-1 mb-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-10"
-    >
-      {% for categorie in categories %}
-      <div
-        class="p-5 bg-white flex flex-col justify-between border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+    <!-- home -- Categories -->
+    <div class="mb-20">
+      <h3
+        class="text-6xl text-center font-semibold text-blue-400 capitalize mb-10"
       >
+        <span>Categories</span>
+      </h3>
+
+      <div
+        class="flex items-center p-4 px-7 text-sm text-gray-800 mb-10 border border-gray-300 rounded-lg bg-gray-50 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600"
+        role="alert"
+      >
+        <span class="sr-only">Info</span>
         <div>
-          <a href="#">
-            <h5
-              class="mb-3 text-2xl flex gap-2 items-center justify-start font-bold tracking-tight text-gray-900 dark:text-white"
-            >
-              <i class="{{ categorie.icon }}"></i>
-              <span> {{ categorie.categorie }} </span>
-            </h5>
-          </a>
-
-          <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
-            {{ categorie.desc }}
-          </p>
+          <span class="font-medium">
+            Explore our wide range of categories designed to help you master
+            various aspects of web development, from front-end design to
+            back-end programming, database management, and more.
+          </span>
         </div>
-
-        <a
-          href="{{ categorie.link }}"
-          class="inline-flex w-fit items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-        >
-          Read more
-          <svg
-            class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 14 10"
-          >
-            <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M1 5h12m0 0L9 1m4 4L9 9"
-            />
-          </svg>
-        </a>
       </div>
-      {% endfor %}
-    </div>
-  </div>
-
-  <!-- home -- Popular Courses -->
-  <div class="mb-20">
-    <h3
-      class="text-6xl text-center font-semibold text-blue-400 capitalize mb-10"
-    >
-      Our Popular Courses
-    </h3>
-
-    <div class="grid grid-cols-1 mb-10 sm:grid-cols-2 md:grid-cols-3 gap-10">
-      {% for i in range(6) %}
 
       <div
-        class="flex flex-col justify-between p-5 hover:rounded bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 hover:bg-transparent hover:scale-105 transition-all"
+        class="grid grid-cols-1 mb-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-10"
       >
-        <div class="">
-          <img
-            class="rounded mb-3"
-            src="{{url_for('static', filename='img/courses/' +  courses[i].img )}}"
-            alt=""
-          />
+        {% for categorie in categories %}
+        <div
+          class="p-5 bg-white flex flex-col justify-between border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+        >
+          <div>
+            <a href="#">
+              <h5
+                class="mb-3 text-2xl flex gap-2 items-center justify-start font-bold tracking-tight text-gray-900 dark:text-white"
+              >
+                <i class="{{ categorie.icon }}"></i>
+                <span> {{ categorie.categorie }} </span>
+              </h5>
+            </a>
 
-          <h5
-            class="mb-3 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">
+              {{ categorie.desc }}
+            </p>
+          </div>
+
+          <!-- <a
+            href="{{ categorie.link }}"
+            class="inline-flex w-fit items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >
-            {{ courses[i].cours }}
-          </h5>
+            Read more
+            <svg
+              class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 14 10"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1 5h12m0 0L9 1m4 4L9 9"
+              />
+            </svg>
+          </a> -->
+        </div>
+        {% endfor %}
+      </div>
+    </div>
 
-          <p class="mb-3 mt-auto font-normal text-gray-700 dark:text-gray-400">
-            {{ courses[i].desc }}
-          </p>
+    <!-- home -- Popular Courses -->
+    <div class="mb-20">
+      <h3
+        class="text-6xl text-center font-semibold text-blue-400 capitalize mb-10"
+      >
+        Our Popular Courses
+      </h3>
+
+      <div class="grid grid-cols-1 mb-10 sm:grid-cols-2 md:grid-cols-3 gap-10">
+        {% for i in range(6) %}
+
+        <div
+          class="flex flex-col justify-between p-5 hover:rounded bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 hover:bg-transparent hover:scale-105 transition-all"
+        >
+          <div class="">
+            <img
+              class="rounded mb-3"
+              src="{{url_for('static', filename='img/courses/' +  courses[i].img )}}"
+              alt=""
+            />
+
+            <h5
+              class="mb-3 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+            >
+              {{ courses[i].cours }}
+            </h5>
+
+            <p
+              class="mb-3 mt-auto font-normal text-gray-700 dark:text-gray-400"
+            >
+              {{ courses[i].desc }}
+            </p>
+          </div>
+
+          <a
+            href="/courses/{{ courses[i].categorie }}/{{ courses[i].id }}"
+            class="inline-flex w-fit items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          >
+            Read more
+            <svg
+              class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 14 10"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1 5h12m0 0L9 1m4 4L9 9"
+              />
+            </svg>
+          </a>
         </div>
 
-        <a
-          href="/courses/{{ courses[i].categorie }}/{{ courses[i].cours }}"
-          class="inline-flex w-fit items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-        >
-          Read more
-          <svg
-            class="rtl:rotate-180 w-3.5 h-3.5 ms-2"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 14 10"
-          >
-            <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M1 5h12m0 0L9 1m4 4L9 9"
-            />
-          </svg>
-        </a>
+        {% endfor %}
       </div>
 
-      {% endfor %}
-    </div>
-
-    <div class="w-full flex items-center justify-end">
-      <a
-        href="/courses"
-        class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-xl font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800"
-      >
-        <span
-          class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0"
+      <div class="w-full flex items-center justify-end">
+        <a
+          href="/courses"
+          class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-xl font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800"
         >
-          see more
-        </span>
-      </a>
+          <span
+            class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0"
+          >
+            see more
+          </span>
+        </a>
+      </div>
     </div>
-  </div>
 
-  <!-- home -- Students' testimonials -->
-  <div class="mb-20">
-    <h3
-      class="text-6xl text-center font-semibold text-blue-400 capitalize mb-10"
-    >
-      Students' testimonials
-    </h3>
+    <!-- home -- Students' testimonials -->
+    <div class="mb-20">
+      <h3
+        class="text-6xl text-center font-semibold text-blue-400 capitalize mb-10"
+      >
+        Students' testimonials
+      </h3>
 
-    <div class="grid grid-cols-1 mb-10 sm:grid-cols-2 gap-5">
-      {% for testimonial in testimonials %}
-      <section class="relative isolate overflow-hidden px-6 lg:px-8">
-        <div class="mx-auto max-w-2xl lg:max-w-4xl">
-          <figure class="mt-5 flex flex-col justify-between items-center">
-            <figcaption class="">
-              <img
-                class="mx-auto size-10 rounded-full"
-                src="{{ url_for('static', filename='img/students/' +  testimonial.author_img)}}"
-                alt=""
-              />
-              <div
-                class="mt-4 flex items-center justify-center space-x-3 text-base"
-              >
-                <div class="font-semibold text-gray-100">
-                  {{ testimonial.author_name }}
-                </div>
-                <svg
-                  viewBox="0 0 2 2"
-                  width="3"
-                  height="3"
-                  aria-hidden="true"
-                  class="fill-gray-900"
+      <div class="grid grid-cols-1 mb-10 sm:grid-cols-2 gap-5">
+        {% for testimonial in testimonials %}
+        <section class="relative isolate overflow-hidden px-6 lg:px-8">
+          <div class="mx-auto max-w-2xl lg:max-w-4xl">
+            <figure class="mt-5 flex flex-col justify-between items-center">
+              <figcaption class="">
+                <img
+                  class="mx-auto size-10 rounded-full"
+                  src="{{ url_for('static', filename='img/students/' +  testimonial.author_img)}}"
+                  alt=""
+                />
+                <div
+                  class="mt-4 flex items-center justify-center space-x-3 text-base"
                 >
-                  <circle cx="1" cy="1" r="1" />
-                </svg>
-                <div class="text-gray-400">
-                  {{ testimonial.author_categorie }}
+                  <div class="font-semibold text-gray-100">
+                    {{ testimonial.author_name }}
+                  </div>
+                  <svg
+                    viewBox="0 0 2 2"
+                    width="3"
+                    height="3"
+                    aria-hidden="true"
+                    class="fill-gray-900"
+                  >
+                    <circle cx="1" cy="1" r="1" />
+                  </svg>
+                  <div class="text-gray-400">
+                    {{ testimonial.author_categorie }}
+                  </div>
                 </div>
-              </div>
-            </figcaption>
+              </figcaption>
 
-            <blockquote
-              class="text-center mt-5 text-xl/8 font-semibold text-gray-100 sm:text-2xl/9"
-            >
-              <p>“{{ testimonial.testimonial }}”</p>
-            </blockquote>
-          </figure>
-        </div>
-      </section>
-      {% endfor %}
+              <blockquote
+                class="text-center mt-5 text-xl/8 font-semibold text-gray-100 sm:text-2xl/9"
+              >
+                <p>“{{ testimonial.testimonial }}”</p>
+              </blockquote>
+            </figure>
+          </div>
+        </section>
+        {% endfor %}
+      </div>
     </div>
   </div>
 </div>

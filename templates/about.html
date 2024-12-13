@@ -1,142 +1,146 @@
 {% extends "layout.html" %} {% block content %}
 
-<div class="mb-10">
-  <!-- na lign -->
-  <nav class="flex mb-5" aria-label="Breadcrumb">
-    <ol
-      class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse"
-    >
-      <li class="inline-flex items-center">
-        <a
-          href="/"
-          class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white"
-        >
-          <svg
-            class="w-3 h-3 me-2.5"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="currentColor"
-            viewBox="0 0 20 20"
+<div class="mx-auto w-full px-5 md:w-11/12 lg:w-10/12">
+  <div class="mb-10">
+    <!-- na lign -->
+    <nav class="flex mb-5" aria-label="Breadcrumb">
+      <ol
+        class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse"
+      >
+        <li class="inline-flex items-center">
+          <a
+            href="/"
+            class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white"
           >
-            <path
-              d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z"
-            />
-          </svg>
-          Home
-        </a>
-      </li>
+            <svg
+              class="w-3 h-3 me-2.5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z"
+              />
+            </svg>
+            Home
+          </a>
+        </li>
 
-      <li aria-current="page">
-        <div class="flex items-center">
-          <svg
-            class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 6 10"
-          >
-            <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="m1 9 4-4-4-4"
-            />
-          </svg>
-          <span class="ms-1 text-sm font-medium md:ms-2 text-gray-500">
-            About
+        <li aria-current="page">
+          <div class="flex items-center">
+            <svg
+              class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 6 10"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m1 9 4-4-4-4"
+              />
+            </svg>
+            <span class="ms-1 text-sm font-medium md:ms-2 text-gray-500">
+              About
+            </span>
+          </div>
+        </li>
+      </ol>
+    </nav>
+
+    <!-- About -- Top section -->
+    <div
+      class="mb-20 grid grid-cols-1 lg:grid-cols-2 gap-10 min-h-[80vh] items-center justify-start"
+    >
+      <div class="w-full hidden lg:flex itens-center justify-center">
+        <img
+          title="img"
+          src="{{ url_for('static', filename='img/svg/Holding the arrow-amico.svg') }}"
+        />
+      </div>
+      <div class="flex flex-col gap-10">
+        <h1 class="text-4xl text-wrap font-semibold">Achievements</h1>
+        <p class="text-xl text-wrap">
+          Le Centre de Formation de Compétences et d'Accompagnement a accompli
+          de nombreux succès en matière de formation professionnelle et
+          d'accompagnement individuel. Il a aidé de nombreuses personnes à
+          développer leurs compétences et à améliorer leur employabilité grâce à
+          ses programmes de formation de qualité supérieure et son
+          accompagnement personnalisé. Le centre a également conçu avec succès
+          des programmes sur mesure pour les entreprises, aidant les employés à
+          relever les défis futurs de l'entreprise.
+        </p>
+
+        <div class="flex items-center gap-3">
+          <span class="w-fit bg-orange-400 text-xl rounded py-5 px-10">
+            +99 Cours
+          </span>
+          <span class="w-fit bg-orange-400 text-xl rounded py-5 px-10">
+            +99 Student
+          </span>
+          <span class="w-fit bg-orange-400 text-xl rounded py-5 px-10">
+            +99 Award
           </span>
         </div>
-      </li>
-    </ol>
-  </nav>
-
-  <!-- About -- Top section -->
-  <div
-    class="mb-20 grid grid-cols-1 lg:grid-cols-2 gap-10 min-h-[80vh] items-center justify-start"
-  >
-    <div class="w-full hidden lg:flex itens-center justify-center">
-      <img
-        title="img"
-        src="{{ url_for('static', filename='img/svg/Holding the arrow-amico.svg') }}"
-      />
-    </div>
-    <div class="flex flex-col gap-10">
-      <h1 class="text-4xl text-wrap font-semibold">Achievements</h1>
-      <p class="text-xl text-wrap">
-        Le Centre de Formation de Compétences et d'Accompagnement a accompli de
-        nombreux succès en matière de formation professionnelle et
-        d'accompagnement individuel. Il a aidé de nombreuses personnes à
-        développer leurs compétences et à améliorer leur employabilité grâce à
-        ses programmes de formation de qualité supérieure et son accompagnement
-        personnalisé. Le centre a également conçu avec succès des programmes sur
-        mesure pour les entreprises, aidant les employés à relever les défis
-        futurs de l'entreprise.
-      </p>
-
-      <div class="flex items-center gap-3">
-        <span class="w-fit bg-orange-400 text-xl rounded py-5 px-10">
-          +99 Cours
-        </span>
-        <span class="w-fit bg-orange-400 text-xl rounded py-5 px-10">
-          +99 Student
-        </span>
-        <span class="w-fit bg-orange-400 text-xl rounded py-5 px-10">
-          +99 Award
-        </span>
       </div>
     </div>
-  </div>
 
-  <!-- About -- Team -->
-  <div class="mb-20">
-    <h3
-      class="text-6xl text-center font-semibold text-blue-400 capitalize mb-16"
-    >
-      <span>Meat Our Team</span>
-    </h3>
-
-    <div
-      class="grid grid-cols-1 mb-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-10"
-    >
-      {% for person in team %}
-      <div
-        class="team-card flex relative flex-col justify-between p-5 hover:rounded bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 hover:bg-transparent hover:scale-105 transition-all"
+    <!-- About -- Team -->
+    <div class="mb-20">
+      <h3
+        class="text-6xl text-center font-semibold text-blue-400 capitalize mb-16"
       >
-        <div class="">
-          <img
-            class="rounded mb-3"
-            src="{{url_for('static', filename='img/team/' +  person.img )}}"
-            alt=""
-          />
+        <span>Meat Our Team</span>
+      </h3>
 
-          <h5
-            class="mb-3 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
-          >
-            {{ person.name }}
-          </h5>
-
-          <p class="mb-3 mt-auto font-normal text-gray-700 dark:text-gray-400">
-            {{ person.role }}
-          </p>
-        </div>
-
+      <div
+        class="grid grid-cols-1 mb-10 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 gap-10"
+      >
+        {% for person in team %}
         <div
-          class="team-links absolute hidden backdrop-blur-xl flex-col gap-3 p-2 rounded-s-lg z-10 transition-all ease-out duration-300 border border-gray-600 -right-14 top-1/2 -translate-y-1/2 bg-transparent"
+          class="team-card flex relative flex-col justify-between p-5 hover:rounded bg-white border border-gray-200 shadow dark:bg-gray-800 dark:border-gray-700 hover:bg-transparent hover:scale-105 transition-all"
         >
-          {% for socail in person.socails %}
-          <a
-            class="text-4xl text-gray-300"
-            title="link"
-            target="_blank"
-            href="{{ socail.url }}"
+          <div class="">
+            <img
+              class="rounded mb-3"
+              src="{{url_for('static', filename='img/team/' +  person.img )}}"
+              alt=""
+            />
+
+            <h5
+              class="mb-3 text-2xl font-bold tracking-tight text-gray-900 dark:text-white"
+            >
+              {{ person.name }}
+            </h5>
+
+            <p
+              class="mb-3 mt-auto font-normal text-gray-700 dark:text-gray-400"
+            >
+              {{ person.role }}
+            </p>
+          </div>
+
+          <div
+            class="team-links absolute hidden backdrop-blur-xl flex-col gap-3 p-2 rounded-s-lg z-10 transition-all ease-out duration-300 border border-gray-600 -right-14 top-1/2 -translate-y-1/2 bg-transparent"
           >
-            <i class="{{ socail.icon }}"></i>
-          </a>
-          {% endfor %}
+            {% for socail in person.socails %}
+            <a
+              class="text-4xl text-gray-300"
+              title="link"
+              target="_blank"
+              href="{{ socail.url }}"
+            >
+              <i class="{{ socail.icon }}"></i>
+            </a>
+            {% endfor %}
+          </div>
         </div>
+        {% endfor %}
       </div>
-      {% endfor %}
     </div>
   </div>
 </div>
