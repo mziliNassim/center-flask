@@ -1,0 +1,51 @@
+
+coursesList = [
+  {
+    "id": 1,
+    "cours": "React JS",
+    "desc": "Learn to build dynamic and responsive user interfaces with React, a popular JavaScript library for front-end development.",
+    "img": "1.png",
+    "url": "/courses/reactjs",
+    "categorie": "Front-End",
+  },
+  {
+    "id": 2,
+    "cours": "Flask",
+    "desc": "Explore the power of Flask, a lightweight Python framework for building web applications and APIs.",
+    "img": "2.png",
+    "url": "/courses/flask",
+    "categorie": "Back-End",
+  },
+  {
+    "id": 3,
+    "cours": "Express JS",
+    "desc": "Master back-end development with Express, a fast and minimalist framework for Node.js applications.",
+    "img": "3.png",
+    "url": "/courses/expressjs",
+    "categorie": "Back-End",
+  },
+  {
+    "id": 4,
+    "cours": "CSS / SASS",
+    "desc": "Enhance your styling skills by learning CSS and SASS to create professional, responsive, and maintainable designs.",
+    "img": "4.png",
+    "url": "/courses/css-sass",
+    "categorie": "Web Static",
+  },
+  {
+    "id": 5,
+    "cours": "Django",
+    "desc": "Delve into Django, a high-level Python framework, to develop robust and scalable web applications.",
+    "img": "5.png",
+    "url": "/courses/django",
+    "categorie": "Back-End",
+  },
+  {
+    "id": 6,
+    "cours": "Vue JS",
+    "desc": "Discover Vue.js, a progressive JavaScript framework, to create seamless and interactive user interfaces.",
+    "img": "6.png",
+    "url": "/courses/vuejs",
+    "categorie": "Front-End",
+  },
+]
