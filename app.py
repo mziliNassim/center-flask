@@ -112,19 +112,77 @@ testimonials = [
 @app.route("/")
 @app.route("/home")
 def home():
-    return render_template('home.html', categories=categories, courses=coursesList, testimonials=testimonials, title='home')
+    return render_template('home.html', title='home', categories=categories, courses=coursesList, testimonials=testimonials)
+
+team = [
+  {
+    "id" : 1,
+    "name" : 'Ashley L Wilson',
+    "role" : "Directeur administratif",
+    "img" : "team 1.jpg",
+    "socails" : [
+      {"url" : 'mailto:mzilinassim@gmail.com', "icon": "bi bi-envelope", "title" : "email"},
+      {"url" : 'https://www.instagram.com/nassim__dev/', "icon" : "bi bi-instagram", "title" : "instagram"},
+      {"url" : 'https://www.linkedin.com/in/mzilinassim/', "icon" : "bi bi-linkedin", "title" : "linkedin"}
+    ]
+  },
+  {
+    "id" : 2,
+    "name" : 'Ignacio F Norris',
+    "role" : "Coach professionnel",
+    "img" : "team 2.jpg",
+    "socails" : [
+      {"url" : 'mailto:mzilinassim@gmail.com', "icon": "bi bi-envelope", "title" : "email"},
+      {"url" : 'https://www.instagram.com/nassim__dev/', "icon" : "bi bi-instagram", "title" : "instagram"},
+      {"url" : 'https://www.linkedin.com/in/mzilinassim/', "icon" : "bi bi-linkedin", "title" : "linkedin"},
+    ]
+  },
+  {
+    "id" : 3,
+    "name" : 'Maxine R Sales',
+    "role" : "Conseiller en formation",
+    "img" : "team 3.jpg",
+    "socails" : [
+      {"url" : 'mailto:mzilinassim@gmail.com', "icon": "bi bi-envelope", "title" : "email"},
+      {"url" : 'https://www.instagram.com/nassim__dev/', "icon" : "bi bi-instagram", "title" : "instagram"},
+      {"url" : 'https://www.linkedin.com/in/mzilinassim/', "icon" : "bi bi-linkedin", "title" : "linkedin"},
+    ]
+  },
+  {
+    "id" : 4,
+    "name" : 'Joe M Gates',
+    "role" : "Coach professionnel",
+    "img" : "team 4.jpg",
+    "socails" : [
+      {"url" : 'mailto:mzilinassim@gmail.com', "icon": "bi bi-envelope", "title" : "email"},
+      {"url" : 'https://www.instagram.com/nassim__dev/', "icon" : "bi bi-instagram", "title" : "instagram"},
+      {"url" : 'https://www.linkedin.com/in/mzilinassim/', "icon" : "bi bi-linkedin", "title" : "linkedin"},
+    ]
+  },
+  {
+    "id" : 5,
+    "name" : 'Jean Mlbon',
+    "role" : "Coach professionnel",
+    "img" : "team 5.jpg",
+    "socails" : [
+      {"url" : 'mailto:mzilinassim@gmail.com', "icon": "bi bi-envelope", "title" : "email"},
+      {"url" : 'https://www.instagram.com/nassim__dev/', "icon" : "bi bi-instagram", "title" : "instagram"},
+      {"url" : 'https://www.linkedin.com/in/mzilinassim/', "icon" : "bi bi-linkedin", "title" : "linkedin"},
+    ]
+  }
+]
 
 @app.route("/about")
 def about():
-    return render_template('about.html')
+    return render_template('about.html' , title='about', team=team)
 
 @app.route("/courses")
 def courses():
-    return render_template("courses.html")
+    return render_template("courses.html", title='courses')
 
 @app.route("/contact")
 def contact():
-    return render_template("contact.html")
+    return render_template("contact.html", title='contact')
 
 @app.route("/<path:subpath>")
 def not_found(subpath):

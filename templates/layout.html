@@ -71,32 +71,36 @@
           >
             <li>
               <a
-                href="/"
-                class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
+                href="{{ url_for('home') }}"
+                class="block py-2 px-3 bg-blue-700 rounded md:bg-transparent md:p-0 {% if title == 'home' %} text-blue-500 {% else %} text-white {% endif %}"
                 aria-current="page"
-                >Home</a
               >
+                Home
+              </a>
             </li>
             <li>
               <a
-                href="/about"
-                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                >About</a
+                href="{{ url_for('about') }}"
+                class="block py-2 px-3 bg-blue-700 rounded md:bg-transparent md:p-0 {% if title == 'about' %} text-blue-500 {% else %} text-white {% endif %}"
               >
+                About
+              </a>
             </li>
             <li>
               <a
-                href="/courses"
-                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                >Courses</a
+                href="{{ url_for('courses') }}"
+                class="block py-2 px-3 bg-blue-700 rounded md:bg-transparent md:p-0 {% if title == 'courses' %} text-blue-500 {% else %} text-white {% endif %}"
               >
+                Courses
+              </a>
             </li>
             <li>
               <a
-                href="/contact"
-                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
-                >Contact</a
+                href="{{ url_for('contact') }}"
+                class="block py-2 px-3 bg-blue-700 rounded md:bg-transparent md:p-0 {% if title == 'contact' %} text-blue-500 {% else %} text-white {% endif %}"
               >
+                Contact
+              </a>
             </li>
           </ul>
         </div>

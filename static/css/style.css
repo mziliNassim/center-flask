@@ -8,3 +8,7 @@ body::before {
   display: block;
   height: 100px;
 }
+.team-card:hover .team-links {
+  display: flex;
+  right: 0;
+}
