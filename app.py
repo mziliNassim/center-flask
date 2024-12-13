@@ -32,7 +32,7 @@ def courses():
   )
 
 @app.route("/courses/<categorie>")
-def course(categorie):
+def coursesByCategorie(categorie):
   filtered_courses = [cours for cours in coursesList if cours["categorie"] == categorie]
   return render_template(
     "courses.html",
@@ -41,6 +41,19 @@ def course(categorie):
     categories=categories,
     active=categorie
   )
+
+@app.route("/courses/<categorie>/<coursId>")
+def cours(categorie, coursId):
+  for cours in coursesList :
+    if int(coursId) == cours['id'] :
+      return render_template("cours.html", cours=cours)
+  return render_template(
+    "courses.html",
+    title='courses',
+    courses=coursesList,
+    categories=categories
+  )
+
 
 @app.route("/contact")
 def contact():

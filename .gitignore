@@ -1,5 +1,8 @@
 
 /__pycache__
+
+/data/__pycache__
+
 /Include
 /Lib
 /Scripts
