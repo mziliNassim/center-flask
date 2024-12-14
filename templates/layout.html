@@ -49,47 +49,12 @@
             >
           </a>
 
-          <!-- Login sm -->
           <!-- Login md -->
           {% set auth_link, auth_text = ("/register", "Sign up") if title ==
           "login" else ("/login", "Sign in") %}
-          <a
-            href="{{ auth_link }}"
-            class="relative inline-flex md:hidden items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800"
-          >
-            <span
-              class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-[#111827] rounded-md group-hover:bg-opacity-0"
-            >
-              {{ auth_text }}
-            </span>
-          </a>
-        </div>
 
-        <!-- Toggle BTN -->
-        <button
-          data-collapse-toggle="navbar-default"
-          type="button"
-          class="items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-          aria-controls="navbar-default"
-          aria-expanded="false"
-        >
-          <span class="sr-only">Open main menu</span>
-          <svg
-            class="w-5 h-5"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 17 14"
-          >
-            <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M1 1h15M1 7h15M1 13h15"
-            />
-          </svg>
-        </button>
+          <span></span>
+        </div>
 
         <div class="w-full md:static md:flex justify-end gap-5">
           <!-- Nav links -->
@@ -131,9 +96,52 @@
             </li>
           </ul>
 
-          <!-- Login md -->
+          <!-- Login lg -->
           {% set auth_link, auth_text = ("/register", "Sign up") if title ==
-          "login" else ("/login", "Sign in") %}
+          "login" else ("/login", "Sign in") %} {% if session["user"] %}
+
+          <div class="relative hidden md:block font-[sans-serif]">
+            <button
+              type="button"
+              class="dropdownToggle px-4 py-2 flex items-center rounded-full text-gray-100 text-sm border border-gray-700 outline-none hover:bg-gray-900"
+            >
+              <img
+                title="user"
+                src="https://readymadeui.com/profile_6.webp"
+                class="w-7 h-7 mr-3 rounded-full shrink-0"
+              />
+              {{ session["user"] }}
+              <i
+                class="bi bi-caret-down-fill w-3 fill-gray-400 inline ml-3"
+              ></i>
+            </button>
+
+            <div
+              class="dropdownMenu hidden absolute block shadow-lg bg-white py-2 z-[1000] min-w-full w-max rounded-lg max-h-96 overflow-auto"
+            >
+              <!-- <li
+                class="py-2.5 px-5 flex gap-3 items-center justify-start hover:bg-gray-100 text-[#333] text-sm cursor-pointer"
+              >
+                <i class="bi bi-person text-xl"></i>
+                View profile
+              </li> -->
+              <!-- <li
+                class="py-2.5 px-5 flex gap-3 items-center justify-start hover:bg-gray-100 text-[#333] text-sm cursor-pointer"
+              >
+                <i class="bi bi-border-style text-xl"></i>
+                Dashboard
+              </li> -->
+              <a
+                href="/logout"
+                class="py-2.5 px-5 flex gap-3 items-center justify-start hover:bg-gray-100 text-[#333] text-sm cursor-pointer"
+              >
+                <i class="bi bi-box-arrow-right text-xl"></i>
+                Logout
+              </a>
+            </div>
+          </div>
+
+          {% else %}
           <a
             href="{{ auth_link }}"
             class="relative md:inline-flex hidden items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800"
@@ -144,6 +152,7 @@
               {{ auth_text }}
             </span>
           </a>
+          {% endif %}
         </div>
       </div>
     </nav>

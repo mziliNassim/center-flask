@@ -2,6 +2,39 @@
 
 <div class="mx-auto w-full px-5 md:w-11/12 lg:w-10/12">
   <div class="my-10 md:my-0">
+    <!-- Flash Alerts -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div>
+          {% for category, message in messages %}
+            <div
+              class="alert flex items-center p-4 mb-4 rounded-lg bg-[#1f2937]
+              {% if category == 'success' %} text-green-400  {% else %} text-yellow-400 {% endif %}"
+              role="alert"
+            >
+              <span class="sr-only">Info</span>
+              <div class="ms-3 capitalize text-sm font-medium">{{ message }}</div>
+              <button
+                type="button"
+                class="closeAlert ms-auto -mx-1.5 -my-1.5 rounded-lg focus:ring-2 p-1.5 inline-flex items-center justify-center h-8 w-8 bg-gray-800 hover:bg-gray-700
+                {% if category == 'success' %} text-green-500 focus:ring-green-400
+                {% elif category == 'error' %} text-red-500 focus:ring-red-400
+                {% else %} text-yellow-500 focus:ring-yellow-400 {% endif %}"
+                data-dismiss-target="#alert-{{ loop.index }}"
+                aria-label="Close"
+              >
+                <span class="sr-only">Close</span>
+                <i class="bi bi-x-lg"></i>
+              </button>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+
+
+
     <!-- home -- Top section -->
     <div
       class="grid grid-cols-1 lg:grid-cols-2 gap-10 min-h-[80vh] items-center justify-start"
