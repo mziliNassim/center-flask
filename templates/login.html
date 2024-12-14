@@ -1,0 +1,181 @@
+{% extends "layout.html" %} {% block content %}
+
+<div class="mx-auto w-full px-5 md:w-11/12 lg:w-10/12">
+  <div class="my-10 md:my-0">
+    <!-- na lign -->
+    <nav class="flex mb-5" aria-label="Breadcrumb">
+      <ol
+        class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse"
+      >
+        <li class="inline-flex items-center">
+          <a
+            href="/"
+            class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-blue-600 dark:text-gray-400 dark:hover:text-white"
+          >
+            <svg
+              class="w-3 h-3 me-2.5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z"
+              />
+            </svg>
+            Home
+          </a>
+        </li>
+
+        <li aria-current="page">
+          <div class="flex items-center">
+            <svg
+              class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 6 10"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m1 9 4-4-4-4"
+              />
+            </svg>
+            <span class="ms-1 text-sm font-medium md:ms-2 text-gray-500">
+              Login
+            </span>
+          </div>
+        </li>
+      </ol>
+    </nav>
+
+    <!-- login -->
+    <div class="">
+      <div class="flex justify-center px-4">
+        <div class="grid md:grid-cols-2 items-center gap-4 w-full">
+          <div class="order-2 hidden md:block">
+            <!-- Tile -->
+            <h1 class="flex items-center mb-12 space-x-3 rtl:space-x-reverse">
+              <span
+                class="self-center text-8xl text-blue-500 font-semibold whitespace-nowrap"
+                >CenTER</span
+              >
+            </h1>
+
+            <h2 class="text-4xl font-extrabold lg:leading-[50px] text-white">
+              Seamless Login for Exclusive Access
+            </h2>
+            <p class="text-xl mt-6 text-white">
+              Immerse yourself in a hassle-free login journey with our
+              intuitively designed login form. Effortlessly access your account.
+            </p>
+            <p class="text-md mt-6 text-white">
+              Don't have an account
+              <a
+                href="/register"
+                class="text-blue-500 font-semibold underline ml-1"
+                >Register here</a
+              >
+            </p>
+          </div>
+
+          <div
+            class="order-1 w-full border-gray-300 rounded-lg py-6 px-0 md:px-0"
+          >
+            <form
+              class="space-y-4 max-w-md mx-auto p-6 rounded-lg shadow-[0_2px_22px_-4px_rgba(93,96,127,0.2)] bg-[#111827] text-gray-50"
+            >
+              <div class="mb-8">
+                <h3 class="text-gray-200 text-3xl font-extrabold">Sign IN</h3>
+                <p class="text-gray-400 text-sm mt-4 leading-relaxed">
+                  Sign up your account and explore a world of possibilities.
+                  Your journey begins here.
+                </p>
+              </div>
+
+              <!-- username -->
+              <div>
+                <label class="text-gray-200 text-sm mb-2 block"
+                  >User name</label
+                >
+                <div class="relative flex items-center">
+                  <input
+                    name="username"
+                    type="text"
+                    required
+                    class="w-full text-sm text-gray-800 border border-gray-300 px-4 py-3 rounded-lg outline-blue-600"
+                    placeholder="Enter user name"
+                  />
+                  <i
+                    class="bi bi-person-add text-gray-400 text-xl absolute right-4"
+                  ></i>
+                </div>
+              </div>
+
+              <!-- password -->
+              <div>
+                <label class="text-gray-200 text-sm mb-2 block">Password</label>
+                <div class="relative flex items-center">
+                  <input
+                    name="password"
+                    type="password"
+                    required
+                    class="input-password w-full text-sm text-gray-800 border border-gray-300 px-4 py-3 rounded-lg outline-blue-600"
+                    placeholder="Enter password"
+                  />
+                  <!-- togle eye passaword -->
+                  <i
+                    class="eye-password bi bi-eye text-gray-400 text-xl absolute right-4 cursor-pointer"
+                  ></i>
+                </div>
+              </div>
+
+              <!-- Terms -->
+              <div class="flex flex-wrap items-center justify-between gap-4">
+                <div class="flex items-center">
+                  <input
+                    id="remember-me"
+                    name="remember-me"
+                    type="checkbox"
+                    class="h-4 w-4 shrink-0 text-blue-400 focus:ring-blue-500 border-gray-300 rounded"
+                  />
+                  <label
+                    for="remember-me"
+                    class="ml-3 block text-sm text-gray-200"
+                  >
+                    Accept terms and conditions
+                  </label>
+                </div>
+              </div>
+
+              <!-- submit -->
+              <div class="!mt-8">
+                <button
+                  title="login"
+                  type="submit"
+                  class="w-full shadow-xl py-3 px-4 text-sm tracking-wide rounded-lg text-white bg-blue-600 hover:bg-blue-700 focus:outline-none"
+                >
+                  Register
+                </button>
+              </div>
+
+              <p class="text-sm !mt-8 text-center text-gray-200">
+                Alredy have account
+                <a
+                  href="/login"
+                  class="text-blue-500 font-semibold hover:underline ml-1 whitespace-nowrap"
+                  >login here</a
+                >
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

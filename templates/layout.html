@@ -36,19 +36,40 @@
   <body
     class="flex flex-col min-h-[100vh] overflow-x-hidden bg-[#151d2d] text-white"
   >
-    <nav class="navBar z-50 fixed w-full bg-transparent border-gray-200 mb-4">
-      <div class="flex w-10/12 items-center justify-between mx-auto py-4">
-        <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-          <span
-            class="self-center text-4xl text-blue-500 font-semibold whitespace-nowrap"
-            >CenTER</span
-          >
-        </a>
+    <nav class="navBar z-50 fixed w-full border-gray-200">
+      <div
+        class="flex flex-col md:flex-row gap-5 w-11/12 md:w-10/12 md:items-center md:justify-between mx-auto py-4"
+      >
+        <div class="w-full flex justify-between items-center">
+          <!-- Tile -->
+          <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+            <span
+              class="self-center text-4xl text-blue-500 font-semibold whitespace-nowrap"
+              >CenTER</span
+            >
+          </a>
 
+          <!-- Login sm -->
+          <!-- Login md -->
+          {% set auth_link, auth_text = ("/register", "Sign up") if title ==
+          "login" else ("/login", "Sign in") %}
+          <a
+            href="{{ auth_link }}"
+            class="relative inline-flex md:hidden items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800"
+          >
+            <span
+              class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-[#111827] rounded-md group-hover:bg-opacity-0"
+            >
+              {{ auth_text }}
+            </span>
+          </a>
+        </div>
+
+        <!-- Toggle BTN -->
         <button
           data-collapse-toggle="navbar-default"
           type="button"
-          class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+          class="items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
           aria-controls="navbar-default"
           aria-expanded="false"
         >
@@ -70,14 +91,15 @@
           </svg>
         </button>
 
-        <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+        <div class="w-full md:static md:flex justify-end gap-5">
+          <!-- Nav links -->
           <ul
-            class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-transparent md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 dark:border-gray-700"
+            class="font-medium flex items-center justify-between p-1 md:p-0 border-b border-gray-100 rounded bg-transparent md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 dark:border-gray-700"
           >
             <li>
               <a
                 href="{{ url_for('home') }}"
-                class="block py-2 px-3 bg-blue-700 rounded md:bg-transparent md:p-0 {% if title == 'home' %} text-blue-500 {% else %} text-white {% endif %}"
+                class="py-2 px-3 rounded md:bg-transparent md:p-0 {% if title == 'home' %} text-blue-500 {% else %} text-white {% endif %}"
                 aria-current="page"
               >
                 Home
@@ -86,7 +108,7 @@
             <li>
               <a
                 href="{{ url_for('about') }}"
-                class="block py-2 px-3 bg-blue-700 rounded md:bg-transparent md:p-0 {% if title == 'about' %} text-blue-500 {% else %} text-white {% endif %}"
+                class="py-2 px-3 rounded md:bg-transparent md:p-0 {% if title == 'about' %} text-blue-500 {% else %} text-white {% endif %}"
               >
                 About
               </a>
@@ -94,7 +116,7 @@
             <li>
               <a
                 href="{{ url_for('courses') }}"
-                class="block py-2 px-3 bg-blue-700 rounded md:bg-transparent md:p-0 {% if title == 'courses' %} text-blue-500 {% else %} text-white {% endif %}"
+                class="py-2 px-3 rounded md:bg-transparent md:p-0 {% if title == 'courses' %} text-blue-500 {% else %} text-white {% endif %}"
               >
                 Courses
               </a>
@@ -102,12 +124,26 @@
             <li>
               <a
                 href="{{ url_for('contact') }}"
-                class="block py-2 px-3 bg-blue-700 rounded md:bg-transparent md:p-0 {% if title == 'contact' %} text-blue-500 {% else %} text-white {% endif %}"
+                class="py-2 px-3 rounded md:bg-transparent md:p-0 {% if title == 'contact' %} text-blue-500 {% else %} text-white {% endif %}"
               >
                 Contact
               </a>
             </li>
           </ul>
+
+          <!-- Login md -->
+          {% set auth_link, auth_text = ("/register", "Sign up") if title ==
+          "login" else ("/login", "Sign in") %}
+          <a
+            href="{{ auth_link }}"
+            class="relative md:inline-flex hidden items-center justify-center p-0.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800"
+          >
+            <span
+              class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-[#111827] rounded-md group-hover:bg-opacity-0"
+            >
+              {{ auth_text }}
+            </span>
+          </a>
         </div>
       </div>
     </nav>

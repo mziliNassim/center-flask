@@ -54,12 +54,25 @@ def cours(categorie, coursId):
     categories=categories
   )
 
-
 @app.route("/contact")
 def contact():
   return render_template(
     "contact.html",
     title='contact'
+  )
+
+@app.route("/login")
+def login():
+  return render_template(
+    "login.html",
+    title='login'
+  )
+
+@app.route("/register")
+def register():
+  return render_template(
+    "register.html",
+    title='register'
   )
 
 @app.route("/<path:subpath>")
