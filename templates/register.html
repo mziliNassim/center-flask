@@ -132,6 +132,7 @@
                     name="username"
                     type="text"
                     required
+                    value="{% if registerAlert.data %}{{registerAlert.data.username}}{% endif %}"
                     class="w-full text-sm text-gray-800 border border-gray-300 px-4 py-3 rounded-lg outline-blue-600"
                     placeholder="Enter user name"
                   />
@@ -149,6 +150,7 @@
                     name="email"
                     type="email"
                     required
+                    value="{% if registerAlert.data %}{{registerAlert.data.email}}{% endif %}"
                     class="w-full text-sm text-gray-800 border border-gray-300 px-4 py-3 rounded-lg outline-blue-600"
                     placeholder="Enter email..."
                   />
@@ -166,6 +168,7 @@
                     name="password"
                     type="password"
                     required
+                    value="{% if registerAlert.data %}{{registerAlert.data.password}}{% endif %}"
                     class="input-password w-full text-sm text-gray-800 border border-gray-300 px-4 py-3 rounded-lg outline-blue-600"
                     placeholder="Enter password"
                   />
@@ -184,8 +187,9 @@
                     name="confirm_password"
                     type="password"
                     required
+                    value="{% if registerAlert.data %}{{registerAlert.data.confirm_password}}{% endif %}"
                     class="input-password w-full text-sm text-gray-800 border border-gray-300 px-4 py-3 rounded-lg outline-blue-600"
-                    placeholder="Enter password"
+                    placeholder="Confirm password"
                   />
                   <!-- togle eye passaword -->
                   <i
@@ -198,13 +202,13 @@
               <div class="flex flex-wrap items-center justify-between gap-4">
                 <div class="flex items-center">
                   <input
-                    id="remember-me"
-                    name="remember-me"
+                    id="terms"
+                    name="terms"
                     type="checkbox"
                     class="h-4 w-4 shrink-0 text-blue-400 focus:ring-blue-500 border-gray-300 rounded"
                   />
                   <label
-                    for="remember-me"
+                    for="terms"
                     class="ml-3 block text-sm text-gray-200"
                   >
                     Accept terms and conditions

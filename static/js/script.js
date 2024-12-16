@@ -15,12 +15,12 @@ let dropdownToggle = document.querySelector(".dropdownToggle");
 let dropdownMenu = document.querySelector(".dropdownMenu");
 
 function handleClick() {
-  if (dropdownMenu.className.includes("block")) {
-    dropdownMenu.classList.add("hidden");
-    dropdownMenu.classList.remove("block");
-  } else {
-    dropdownMenu.classList.add("block");
+  if (dropdownMenu.className.includes("hidden")) {
     dropdownMenu.classList.remove("hidden");
+    dropdownMenu.classList.add("block");
+  } else {
+    dropdownMenu.classList.remove("block");
+    dropdownMenu.classList.add("hidden");
   }
 }
 

@@ -68,10 +68,6 @@ def contact():
     title='contact'
   )
 
-@app.route("/<path:subpath>")
-def not_found(subpath):
-  return f'Page Not Found: {subpath}'
-
 @app.route("/login", methods=['GET', 'POST'])
 def login():
   loginAlert = {"message" : "", "type" : "warning"}
@@ -94,11 +90,17 @@ def login():
 def register():
   registerAlert = {"message" : "", "type" : "warning"}
   if request.method == "POST" :
-    username = request.form['username']
-    email = request.form['email']
-    password = request.form['password']
-    confirmPpassword = request.form['confirm_password']
-    registerAlert = validRegisterData(username, email, password, confirmPpassword)
+    username = request.form.get('username')
+    email = request.form.get('email')
+    password = request.form.get('password')
+    confirmPpassword = request.form.get('confirm_password')
+    terms = request.form.get('terms')
+
+    registerAlert = validRegisterData(username, email, password, confirmPpassword, terms)
+    if (registerAlert["valid"]) :
+      flash(registerAlert["message"], registerAlert["type"])
+      session["user"] = username
+      return redirect(url_for("home"))
 
   return render_template(
     "register.html",
@@ -108,8 +110,13 @@ def register():
 
 @app.route("/logout")
 def logout():
-    session.clear()
-    return redirect(url_for("home"))
+  session.clear()
+  return redirect(url_for("home"))
+
+@app.route("/<path:subpath>")
+def not_found(subpath):
+  return f'Page Not Found: {subpath}'
+
 
 if __name__ == "__main__":
   app.run(debug=True)
